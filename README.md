@@ -25,21 +25,21 @@ Run the following command to execute object detection using RT-DETR:
 
 ```bash
 python rt_detr_infer.py --model_name="rtdetr-l.pt" --input_video="input_video.mp4" --output_path="output_video_rt-detr-l.avi"
-
+```
 ### YOLOv8 Inference
 
 Run the following command to execute object detection using YOLOV8:
 
 ```bash
 python yolov8_infer.py --model_name="yolov8-l.pt" --input_video="input_video.mp4" --output_path="output_video_yolov8-l.avi"
-
+```
 ### Video Stitching
 
 Run the following command to stitch two videos for side-by-side comparison:
 
 ```bash
 python stitch_videos.py
-
+```
 ### Results
 
 The output videos can be used to evaluate and compare the performance of RT-DETR and YOLOv8.
