@@ -2,7 +2,7 @@
 
 This repository contains code for running real-time object detection using two state-of-the-art models: Real-Time Detection Transformer (RT-DETR) and YOLOv8. The goal is to provide a side-by-side comparison of these models in terms of speed and accuracy.
 
-<iframe src="https://drive.google.com/file/d/1twBmGE9-gzfiGX6lA679FDZg6oDkkFeD/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1fwv_Xrq2x95FiCdLYlVWT43TQgKUC2W8/view?usp=sharing" width="640" height="480"></iframe>
 
 ## Features
 
