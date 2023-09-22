@@ -11,7 +11,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Object Detection using RT-DETR")
 parser.add_argument("--model_name", default="rtdetr-l.pt", type=str, help="Model name to load for RT-DETR")
 parser.add_argument("--input_video", required=True, type=str, help="Path to input video file")
-parser.add_argument("--output_path", default="output_video_rt-detr-l.avi", type=str, help="Path to save the output video")
+parser.add_argument("--output_path", default="output_video_yolov8-l.avi", type=str, help="Path to save the output video")
 args = parser.parse_args()
 
 
@@ -29,8 +29,9 @@ COCO_CLASSES = {
 }
 
 class YOLOv8Class:
-    def __init__(self, video_path):
+    def __init__(self, video_path, model_name, output_file_path):
         self.video_path = video_path
+        self.output_file_path = output_file_path
 
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         print("Using device: ", self.device)
@@ -74,7 +75,6 @@ class YOLOv8Class:
         fps = int(cap.get(cv2.CAP_PROP_FPS))
 
         # Initialize the VideoWriter
-        output_file_path = "output_video_yolov8-l.avi"  
         fourcc = cv2.VideoWriter_fourcc(*'XVID')  
         out = cv2.VideoWriter(output_file_path, fourcc, fps, (width, height))
 
