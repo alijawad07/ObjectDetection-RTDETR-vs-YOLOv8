@@ -30,8 +30,9 @@ COCO_CLASSES = {
 }
 
 class DETRClass:
-    def __init__(self, video_path):
+    def __init__(self, video_path, model_name, output_file_path):
         self.video_path = video_path
+        self.output_file_path = output_file_path
 
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         print("Using device: ", self.device)
@@ -74,8 +75,7 @@ class DETRClass:
         height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         fps = int(cap.get(cv2.CAP_PROP_FPS))
 
-        # Initialize the VideoWriter
-        output_file_path = "output_video_rt-detr-l.avi"  
+        # Initialize the VideoWriter 
         fourcc = cv2.VideoWriter_fourcc(*'XVID')  
         out = cv2.VideoWriter(output_file_path, fourcc, fps, (width, height))
 
